@@ -1,73 +1,79 @@
 package beans;
 
-public class guitarspec {
+public class GuitarSpec {
 
-	static String builder;
-	static String model;
-	static String type;
-	static String backWood;
-	static String topWood;
-
-	public guitarspec(String builder, String model, String type, String backWood, String topWood) {
+	private String builder;           //Allen,Rosen,Sayan,LANGSHENG
+	private String model;             //M40
+	private String type;              //ClassicalG,FlamencoG,PickG,FolkG,ElectricG
+	private String topWood;              //spruce,cedar,Sitka,Engelmann
+	private String backWood;
+	
+	public GuitarSpec(String builder, String model, String type, String topWood, String backWood) {
 		this.builder = builder;
 		this.model = model;
 		this.type = type;
-		this.backWood = backWood;
 		this.topWood = topWood;
-	}
-
-	public boolean matches(guitarspec otherSpec) {
-		if (builder != otherSpec.builder)
-			return false;
-		if ((model != otherSpec.model))
-			return false;
-		if (type != otherSpec.type)
-			return false;
-		if (backWood != otherSpec.backWood)
-			return false;
-		if (topWood != otherSpec.topWood)
-			return false;
-		return true;
-	}
-
-	public static String getBuilder() {
-		return builder;
+		this.backWood = backWood;
 	}
 
 	public void setBuilder(String builder) {
 		this.builder = builder;
 	}
 
-	public static String getModel() {
-		return model;
-	}
-
 	public void setModel(String model) {
 		this.model = model;
-	}
-
-	public static String getType() {
-		return type;
 	}
 
 	public void setType(String type) {
 		this.type = type;
 	}
 
-	public static String getBackWood() {
-		return backWood;
-	}
-
-	public void setBackWood(String backWood) {
-		this.backWood = backWood;
-	}
-
-	public static String getTopWood() {
-		return topWood;
-	}
-
 	public void setTopWood(String topWood) {
 		this.topWood = topWood;
 	}
+	
+	public void setBackWood(String backWood) {
+		this.backWood = backWood;
+	}
+	
+	public String getBuilder() {
+		return builder;
+	}
 
+	public String getModel() {
+		return model;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public String getTopWood() {
+		return topWood;
+	}
+
+	public String getBackWood() {
+		return backWood;
+	}
+	
+	public boolean matches(GuitarSpec otherSpec) {
+
+		if (!builder.equals(otherSpec.builder))
+			return false;
+		
+		if (!model.equals(otherSpec.model))
+			return false;
+
+		if (!type.equals(otherSpec.type))
+			return false;
+
+		if (!topWood.equals(otherSpec.topWood))
+			return false;
+		
+		if (!backWood.equals(otherSpec.backWood))
+			return false;
+		
+		System.out.println("equal");
+		return true;
+	}
 }

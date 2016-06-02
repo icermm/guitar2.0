@@ -1,4 +1,4 @@
-package service;
+package action;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.guitarDao;
+import bll.GuitarBll;
+import dao.GuitarDao;
 import beans.*;
 
 /**
@@ -32,16 +33,16 @@ public class matchguitar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 接受页面查询条件，并封装成spec
-		guitarspec spec = new guitarspec(null, null, null, null, null);
+		GuitarSpec spec = new GuitarSpec(null, null, null, null, null);
 		spec.setBackWood(request.getParameter("backwood"));
 		spec.setBuilder(request.getParameter("builder"));
 		spec.setModel(request.getParameter("model"));
 		spec.setTopWood(request.getParameter("topwood"));
 		spec.setType(request.getParameter("type"));
-		// 新建一个guitar List 用来存储匹配到的guitars
+		// 新建一个guitar List 用来存储匹配到的guitars				
 		List matchingGuitars = new LinkedList();
-
-		matchingGuitars = guitarDao.inventory().search(spec);
+		
+		matchingGuitars = GuitarBll.inventory().search(spec);
 		
 		System.out.println(matchingGuitars);
 		
