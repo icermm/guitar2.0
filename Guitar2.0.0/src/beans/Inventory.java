@@ -11,16 +11,16 @@ public class Inventory {
     guitars = new LinkedList();
   }
 
-  public void addGuitar(String ID, double price,
+  public void addGuitar(String serialNumber, double price,
                         GuitarSpec spec) {
-    Guitar guitar = new Guitar(ID, price, spec);
+    Guitar guitar = new Guitar(serialNumber, price, spec);
     guitars.add(guitar);
   }
 
-  public Guitar getGuitar(String ID) {
+  public Guitar getGuitar(String serialNumber) {
     for (Iterator i = guitars.iterator(); i.hasNext(); ) {
       Guitar guitar = (Guitar)i.next();
-      if (guitar.getId()==(ID)) {
+      if (guitar.getSerialNumber()==(serialNumber)) {
         return guitar;
       }
     }

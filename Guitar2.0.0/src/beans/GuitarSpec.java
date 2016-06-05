@@ -58,19 +58,19 @@ public class GuitarSpec {
 	
 	public boolean matches(GuitarSpec otherSpec) {
 
-		if (!builder.equals(otherSpec.builder))
+		if (!builder.equals(otherSpec.builder)&&!otherSpec.builder.equals(""))
 			return false;
 		
-		if (!model.equals(otherSpec.model))
+		if (!model.equals(otherSpec.model)&&!otherSpec.model.equals(""))
 			return false;
 
-		if (!type.equals(otherSpec.type))
+		if (!type.equals(otherSpec.type)&&!otherSpec.type.equals(""))
 			return false;
 
-		if (!topWood.equals(otherSpec.topWood))
+		if (!topWood.equals(otherSpec.topWood)&&!otherSpec.topWood.equals(""))
 			return false;
 		
-		if (!backWood.equals(otherSpec.backWood))
+		if (!backWood.equals(otherSpec.backWood)&&!otherSpec.backWood.equals(""))
 			return false;
 		
 		System.out.println("equal");
