@@ -1,18 +1,18 @@
 package beans;
 
 public class Guitar {
-	  private String ID;
+	  private String serialNumber;
 	  private double price;
 	  GuitarSpec spec;
 
-	  public Guitar(String ID, double price, GuitarSpec spec) {
-	    this.ID = ID;
+	  public Guitar(String serialNumber, double price, GuitarSpec spec) {
+	    this.serialNumber = serialNumber;
 	    this.price = price;
 	    this.spec = spec;
 	  }
 
-	  public String getId() {
-	    return ID;
+	  public String getSerialNumber() {
+	    return serialNumber;
 	  }
 
 	  public double getPrice() {

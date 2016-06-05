@@ -22,7 +22,7 @@ public class FindGuitarTester {
         GuitarSpec spec = guitar.getSpec();
         System.out.println(spec.getBuilder() + "--" + spec.getModel() + "--" +
           spec.getType() + "--" +spec.getBackWood() + "--" +spec.getTopWood() + "--" +
-          guitar.getPrice()+"--"+guitar.getId());
+          guitar.getPrice()+"--"+guitar.getSerialNumber());
       }
     } else {
       System.out.println("Sorry, Erin, we have nothing for you.");
